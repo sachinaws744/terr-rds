@@ -1,4 +1,5 @@
 resource "aws_db_instance" "rds" {
+  #identifier           = "test-rds"
   allocated_storage    = var.main_allocated_storage
   engine               = var.main_db_engine
   engine_version       = var.main_db_version
