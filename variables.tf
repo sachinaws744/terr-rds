@@ -51,12 +51,12 @@ variable "sg_vpc_id" {
 }
 variable "sg_ingress_from_port" {
     type = number
-    default = 3306
+    default = 0
 
 }
 variable "sg_ingress_to_port" {
     type = number
-    default = 3306
+    default = 0
 
 }
 variable "cidr"{
