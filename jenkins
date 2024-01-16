@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('clone') {
+            steps {
+                git credentialsId: 'terraform', url: 'https://github.com/sachinaws744/terr-rds.git'
+            }
+        }
+        stage('checkin') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        stage('plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+        stage('Hello') {
+            steps {
+               sh 'terraform ${action} -auto-approve'
+            }
+        }
+    }
+}
