@@ -2,7 +2,7 @@
 
 variable "main_allocated_storage"{
 type = number
-default = 200
+default = 20
 }
 variable "main_db_engine"{
 type = string
@@ -10,7 +10,7 @@ default = "MySQL"
 }
 variable "main_db_instance_class"{
 type = string
-default = "db.m5.large"
+default = "db.t3.micro"
 }
 variable "main_db_username" {
 type = string
@@ -32,7 +32,7 @@ default = "8.0.35"
 #################replica##############
 variable "replica_instance_class" {
     type = string
-  default = ""
+  default = "db.t3.micro"
 }
 
 variable "replica_count" {
@@ -51,12 +51,12 @@ variable "sg_vpc_id" {
 }
 variable "sg_ingress_from_port" {
     type = number
-    default = 0
+    default = 3306
 
 }
 variable "sg_ingress_to_port" {
     type = number
-    default = 0
+    default = 3306
 
 }
 variable "cidr"{
